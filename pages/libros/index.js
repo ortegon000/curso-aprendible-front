@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     console.log(process.env.NEXT_PUBLIC_API_URL)
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/books`)
@@ -9,7 +9,7 @@ export async function getStaticProps() {
     return {
         props: {
             books: data
-        }
+        },
     }
 }
 
